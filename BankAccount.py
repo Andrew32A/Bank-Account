@@ -22,17 +22,23 @@ class BankAccount:
             print(f"Amount withdrawn: ${amount} | New balance: ${self.balance}")
 
     def get_balance(self):
-        pass
+        print(f"Your current balance is: ${self.balance}")
+        return self.balance
 
     def add_interest(self):
-        pass
+        interest = self.balance * 0.00083
+        self.balance += interest
+        self.balance = round(self.balance, 2)
+        print(f"You have gained ${interest} in interest, your current balance is ${self.balance}")
 
     def print_statement(self):
-        print (self.account_number)
-        pass
+        print (f"{self.name}\nAccount number: {self.account_number}\nBalance: ${self.balance}")
 
-test = BankAccount("test")
 
-BankAccount.print_statement(test)
-BankAccount.deposit(test, 10000)
-BankAccount.withdraw(test, 5000)
+user_mitchel = BankAccount("Mitchel Hudson")
+BankAccount.print_statement(user_mitchel)
+BankAccount.deposit(user_mitchel, 10000)
+BankAccount.withdraw(user_mitchel, 5000)
+BankAccount.get_balance(user_mitchel)
+BankAccount.add_interest(user_mitchel)
+BankAccount.print_statement(user_mitchel)
