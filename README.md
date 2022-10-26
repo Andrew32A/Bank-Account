@@ -1,5 +1,5 @@
-# Bank-Account
-ACS 1111 Bank account using classes
+# BankAccount
+ACS 1111 Bank account using classes in python
 
 This program is centered around a class that defines a bank account. It defines the owners name, account number, and balance as attributes.
 
