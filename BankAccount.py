@@ -17,7 +17,7 @@ class BankAccount:
     def withdraw(self, amount):
         # takes self balance and subracts amount in arg
         self.balance -= amount
-        if amount > self.balance:
+        if self.balance < 0:
             print("Insufficient funds. You have been charged an overdraft fee of $10")
             self.balance -= 10
         else:
@@ -30,7 +30,7 @@ class BankAccount:
 
     def add_interest(self):
         # adds an interest of 0.0083% of self balance to self balance
-        if self.balance < 0:
+        if self.balance <= 0:
             print(f"Your account is not elegible for interest due to having a balance of ${self.balance}")
         else:
             interest = self.balance * 0.00083
@@ -42,7 +42,9 @@ class BankAccount:
         # hides first 4 numbers of account number with * and displays users full name and balance
         hidden_acc_num = (str(self.account_number)[4:8])
         hidden_acc_num = "****" + hidden_acc_num
+        print("-"*30)
         print (f"{self.name}\nAccount number: {hidden_acc_num}\nBalance: ${self.balance}")
+        print("-"*30)
 
 # Mitchel Hudson
 user_mitchel = BankAccount("Mitchel Hudson")
@@ -54,12 +56,12 @@ user_mitchel.print_statement()
 print("\n\n")
 
 # Adam Braus
-user_dani = BankAccount("Adam Braus")
-user_dani.deposit(20000)
-user_dani.withdraw(20001)
-user_dani.get_balance()
-user_dani.add_interest()
-user_dani.print_statement()
+user_adam = BankAccount("Adam Braus")
+user_adam.deposit(20000)
+user_adam.withdraw(20001)
+user_adam.get_balance()
+user_adam.add_interest()
+user_adam.print_statement()
 print("\n\n")
 
 
