@@ -3,7 +3,7 @@ import random
 class BankAccount:
     def __init__(self, full_name):
         # define attributes
-        self.name = full_name
+        self.full_name = full_name
         self.account_number = random.randint(80000000,99999999)
         self.balance = 0
     
@@ -43,7 +43,7 @@ class BankAccount:
         hidden_acc_num = (str(self.account_number)[4:8])
         hidden_acc_num = "****" + hidden_acc_num
         print("-"*30)
-        print (f"{self.name}\nAccount number: {hidden_acc_num}\nBalance: ${self.balance}")
+        print (f"{self.full_name}\nAccount number: {hidden_acc_num}\nBalance: ${self.balance}")
         print("-"*30)
 
 # Mitchel Hudson
